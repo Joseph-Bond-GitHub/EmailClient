@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+//TO house the mail service protocol that facillitates the fetching of mail either through IMAP or from sample data
