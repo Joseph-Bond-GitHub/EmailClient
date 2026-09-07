@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //state means the variable is watched in case it's value changes
+    @State public var isLoggedIn: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        if isLoggedIn{
+            HomeView()
+        }else{
+            LoginView(viewModel: LoginViewModel(password: "", username: ""), isPasswordVisible: false, isLoggedIn: $isLoggedIn)
         }
-        .padding()
     }
 }
 
