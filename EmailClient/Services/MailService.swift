@@ -7,4 +7,15 @@
 
 import Foundation
 
-//TO house the mail service protocol that facillitates the fetching of mail either through IMAP or from sample data
+//A protocol is akin to a java interface
+//In it you specify methods and paremeters and variables (Variables require { get set }
+//swiftMailIMAP implements this protocol
+//If the IMAP layer transitions from swiftMail to a custom IMAP servce, you write that fresh as an extension of this (like java extends command)
+protocol MailService {
+    //var isConnected: Bool { get }        // read-only requirement
+    //var currentMailbox: String { get set }  // read-write requirement
+    
+    //Temp
+    func checkLogin(username: String, password: String) -> Bool
+    
+}
