@@ -6,13 +6,28 @@
 //
 
 import SwiftUI
+import Combine
 
-struct LoginViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class LoginViewModel: ObservableObject {
+    
+    
+    // Add your published properties here
+    // Example:
+    // @Published var isLoading: Bool = false
+    // @Published var errorMessage: String?
+    
+    @Published var password: String
+    @Published var username: String
+    
+    let mailService: SwiftMailService = SwiftMailService()
+    
+     init(password: String = "", username: String = "") {
+        self.password = password
+        self.username = username
     }
-}
-
-#Preview {
-    LoginViewModel()
+    
+    func checkDetails() -> Bool {
+        // Use values of password and username as their values are held in this file
+        return mailService.checkLogin(username: username, password: password)
+    }
 }
