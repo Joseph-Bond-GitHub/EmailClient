@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		213B893F304F630200FADF59 /* SwiftMail in Frameworks */ = {isa = PBXBuildFile; productRef = 213B893E304F630200FADF59 /* SwiftMail */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2170C8AE3044BFE500DD3C46 /* EmailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -16,6 +20,11 @@
 			path = EmailClient;
 			sourceTree = "<group>";
 		};
+		2170C8D43045814900DD3C46 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213B893F304F630200FADF59 /* SwiftMail in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				2170C8B03044BFE500DD3C46 /* EmailClient */,
+				2170C8D43045814900DD3C46 /* Shared */,
 				2170C8AF3044BFE500DD3C46 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,9 +73,11 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2170C8B03044BFE500DD3C46 /* EmailClient */,
+				2170C8D43045814900DD3C46 /* Shared */,
 			);
 			name = EmailClient;
 			packageProductDependencies = (
+				213B893E304F630200FADF59 /* SwiftMail */,
 			);
 			productName = EmailClient;
 			productReference = 2170C8AE3044BFE500DD3C46 /* EmailClient.app */;
@@ -94,6 +107,9 @@
 			);
 			mainGroup = 2170C8A53044BFE500DD3C46;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				213B893D304F630200FADF59 /* XCRemoteSwiftPackageReference "SwiftMail" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2170C8AF3044BFE500DD3C46 /* Products */;
 			projectDirPath = "";
@@ -351,6 +367,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		213B893D304F630200FADF59 /* XCRemoteSwiftPackageReference "SwiftMail" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Cocoanetics/SwiftMail";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		213B893E304F630200FADF59 /* SwiftMail */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 213B893D304F630200FADF59 /* XCRemoteSwiftPackageReference "SwiftMail" */;
+			productName = SwiftMail;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2170C8A63044BFE500DD3C46 /* Project object */;
 }
