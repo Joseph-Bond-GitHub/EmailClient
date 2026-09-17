@@ -4,7 +4,7 @@
 //
 //  Created by Joseph Bond on 31/08/2026.
 //
-//This will be the view that includes a toolbar at the bottom and the other views above (sent/inbox etc)
+//This will be the banner at the top that contains the menu button 
 
 import SwiftUI
 

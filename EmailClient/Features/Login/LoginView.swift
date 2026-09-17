@@ -16,6 +16,7 @@ struct LoginView: View {
     @Binding var isLoggedIn: Bool
     
     var body: some View {
+        Image("RunboxLogo").resizable().frame(width: 300, height: 100, alignment: .center)
         
         VStack {
             
@@ -44,13 +45,29 @@ struct LoginView: View {
             
             //Login button
             Button(action: {
-                //update var with entered credentials
-                isLoggedIn = viewModel.checkDetails()
+                Task{
+                    do{
+                        //update var with entered credentials
+                        let attempt = try await viewModel.checkDetails()
+                        
+                        if attempt {
+                            isLoggedIn.toggle()
+                        }else{
+                            //invalid login details, print something to the user about invalid username or password
+                            Text("Invalid username or password").alert(isPresented: .constant(true), content: {
+                                Alert(title: Text("Invalid login details"))
+                            })
+                        }
+                    } catch {
+                        
+                    }
+                }
             }){
                 Text("Login")
             }
         }.padding()
     }
+    
 }
 
 

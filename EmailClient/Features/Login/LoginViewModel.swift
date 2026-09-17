@@ -26,8 +26,13 @@ class LoginViewModel: ObservableObject {
         self.username = username
     }
     
-    func checkDetails() -> Bool {
-        // Use values of password and username as their values are held in this file
-        return mailService.checkLogin(username: username, password: password)
+    func checkDetails() async throws -> Bool {
+        do{
+            // Use values of password and username as their values are held in this file
+            return try await mailService.checkLogin(username: username, password: password)
+        } catch {
+            print("Login Failed: \(error)")
+        }
+        return false //TEMP
     }
 }

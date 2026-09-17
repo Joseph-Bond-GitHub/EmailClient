@@ -15,7 +15,13 @@ protocol MailService {
     //var isConnected: Bool { get }        // read-only requirement
     //var currentMailbox: String { get set }  // read-write requirement
     
+    //App to start is runbox only so runbox details don't need to be changed (set)
+    var rbxIMAPDetails: String { get }
+    
+    
     //Temp
-    func checkLogin(username: String, password: String) -> Bool
+    func checkLogin(username: String, password: String) async throws -> Bool
+    
+    
     
 }

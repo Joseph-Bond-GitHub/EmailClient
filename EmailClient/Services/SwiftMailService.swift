@@ -12,8 +12,12 @@ import SwiftMail
 //Implements MailService means it must conform to the structure of this protocol - implementing its methods 
 final class SwiftMailService: MailService{
     
+    var server: IMAPServer = IMAPServer(host: "mail.runbox.com", port: 993, useTLS: true)
+    
+    let rbxIMAPDetails: String = "mail.runbox.com:993"
     //Temp
-    func checkLogin(username: String, password: String) -> Bool {
-        return true
+    func checkLogin(username: String, password: String) async throws -> Bool {
+        //server.connect()
+        return false
     }
 }
