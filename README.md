@@ -2,20 +2,22 @@ A work in progress MacOS and iOS compatible email client to interface with email
 
 Pictures to be included later
 
-**Requirements**
-Swift Version: Swift 5
-Minimum OS Deployment Target: iOS 26.5, MacOS 26.5
-Xcode Version: Xcode 27.0
+## Requirements
+- Swift 5
+- Minimum OS: iOS 26.5, macOS 26.5
+- Built with Xcode 27.0
 
-**Roadmap**
-Persistent offline storage 
-Local index to facilitate searches 
-Full IMAP and SMTP integration 
-
+## Roadmap
+- Persistent offline storage
+- Local index to facilitate search
+- Full IMAP and SMTP integration
+  
 **Purpose of Development**
-This is my first attempt at a fully featured swift application intended to tie together the various knowledge gained of swift and Apple native apps from tutorials with my working knowledge of email 
+This is my first attempt at a fully featured swift application intended to tie together the various knowledge gained of swift and Apple native apps from tutorials with my working knowledge of email. 
 
-**Architecture**
+## Architecture
+
+```
 EmailClient/
 └── EmailClient/
     ├── App/
@@ -42,5 +44,6 @@ EmailClient/
             ├── HomeViewModel.swift
             ├── MessageDetaillView.swift
             └── MessageRowView.swift
+```
 
 Currently IMAP is implemented through SwiftMailService.swift as an instance of the MailService protocol. This will allow future versions of the application to implement the required IMAP and SMPT features without the need for a SwiftMail import whilst still conforming to the MailService protocol. 
