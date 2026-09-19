@@ -13,11 +13,13 @@ import SwiftMail
 final class SwiftMailService: MailService{
     
     var server: IMAPServer = IMAPServer(host: "mail.runbox.com", port: 993, useTLS: true)
-    
-    let rbxIMAPDetails: String = "mail.runbox.com:993"
-    //Temp
+        
+    //Attempt a connection to the runbox server and attempt to login
+    //if there is no errors, allow the user to login. No current error returns of exact errors
     func checkLogin(username: String, password: String) async throws -> Bool {
-        //server.connect()
-        return false
+        try await server.connect()
+        try await server.login(username: username, password: password)
+        return true
     }
 }
+
