@@ -4,7 +4,7 @@ Pictures to be included later
 
 ## Requirements
 - Swift 5
-- Minimum OS: iOS 26.5, macOS 26.5
+- Minimum OS: iOS 17.0, macOS 26 Tahoe
 - Built with Xcode 27.0
 
 ## Roadmap
